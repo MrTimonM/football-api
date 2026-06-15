@@ -478,7 +478,7 @@
       <a href="#schemas">Response Shapes</a>
       <a href="#filters">Filters</a>
       <a href="#hosting">VPS Hosting</a>
-      <a href="#testing">Testing</a>
+      <a href="#checks">Syntax Check</a>
     </nav>
 
     <main>
@@ -519,8 +519,8 @@
             <p>Team and league logos are rewritten through a local image proxy path.</p>
           </div>
           <div class="card">
-            <strong>Tested parser</strong>
-            <p>The parser includes unit tests for normal and messy payload cases.</p>
+            <strong>Small codebase</strong>
+            <p>The parser and API server are easy to inspect, edit, and deploy.</p>
           </div>
         </div>
       </section>
@@ -784,7 +784,7 @@ $r | Select-Object count | ConvertTo-Json -Depth 4</code></pre>
 apt install -y python3 nginx git
 
 cd /var/www/football-api
-python3 -m unittest -v
+python3 -m py_compile app.py fubo808_parser.py
 python3 app.py</code></pre>
         </div>
         <div class="callout">
@@ -792,25 +792,15 @@ python3 app.py</code></pre>
         </div>
       </section>
 
-      <section id="testing">
-        <h2>Testing</h2>
+      <section id="checks">
+        <h2>Syntax Check</h2>
         <div class="code-window">
           <div class="code-title"><span>PowerShell</span><span>command</span></div>
-          <pre><code>python -m unittest -v</code></pre>
+          <pre><code>python -m py_compile app.py fubo808_parser.py</code></pre>
         </div>
         <div class="code-window">
           <div class="code-title"><span>Text</span><span>response</span></div>
-          <pre><code>test_filter_matches ... ok
-test_normalize_detail ... ok
-test_normalize_event_fallbacks ... ok
-test_normalize_football_match ... ok
-test_normalize_world_cup_match_from_slug ... ok
-test_parse_technic_count ... ok
-test_parse_technic_count_skips_bad_rows_and_labels_unknown_codes ... ok
-test_time_score_and_status_edge_cases ... ok
-
-Ran 8 tests
-OK</code></pre>
+          <pre><code># No output means the files compiled successfully.</code></pre>
         </div>
       </section>
 
@@ -835,7 +825,7 @@ OK</code></pre>
       <a href="#schemas">Response Shapes</a>
       <a href="#filters">Filters</a>
       <a href="#hosting">VPS Hosting</a>
-      <a href="#testing">Testing</a>
+      <a href="#checks">Syntax Check</a>
     </aside>
   </div>
 </body>

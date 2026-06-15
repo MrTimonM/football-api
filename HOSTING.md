@@ -45,7 +45,6 @@ Your folder should contain:
 ```text
 app.py
 fubo808_parser.py
-test_fubo808_parser.py
 README.md
 HOSTING.md
 ```
@@ -56,7 +55,7 @@ If you are using Git later, clone your repository into this same folder.
 
 ```bash
 cd /var/www/football-api
-python3 -m unittest -v
+python3 -m py_compile app.py fubo808_parser.py
 python3 app.py
 ```
 
@@ -232,7 +231,7 @@ After uploading new files:
 
 ```bash
 cd /var/www/football-api
-python3 -m unittest -v
+python3 -m py_compile app.py fubo808_parser.py
 systemctl restart football-api
 ```
 

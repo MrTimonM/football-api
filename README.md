@@ -14,7 +14,6 @@ This project is designed to run as a simple local or VPS-hosted JSON API. It use
 - Clean JSON response format
 - Team and league logo proxy
 - 20-second in-memory cache for faster repeated requests
-- Parser unit tests included
 
 ## Project Structure
 
@@ -22,7 +21,6 @@ This project is designed to run as a simple local or VPS-hosted JSON API. It use
 808fubo808/
   app.py
   fubo808_parser.py
-  test_fubo808_parser.py
   README.md
   HOSTING.md
 ```
@@ -248,17 +246,10 @@ Branch: main
 Folder: /docs
 ```
 
-## Run Tests
+## Check Python Syntax
 
 ```powershell
-python -m unittest -v
-```
-
-Expected result:
-
-```text
-Ran 8 tests
-OK
+python -m py_compile app.py fubo808_parser.py
 ```
 
 ## Error Format
@@ -284,8 +275,7 @@ When changing the API:
 
 1. Update route or fetch logic in `app.py`.
 2. Update parsing logic in `fubo808_parser.py`.
-3. Add tests in `test_fubo808_parser.py`.
-4. Run `python -m unittest -v`.
+3. Run `python -m py_compile app.py fubo808_parser.py`.
 
 ## Credits
 
