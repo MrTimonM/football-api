@@ -183,13 +183,6 @@ const response = await fetch("https://your-domain.com/api/matches?q=mexico");
 const data = await response.json();
 ```
 
-Get details:
-
-```js
-const response = await fetch("https://your-domain.com/api/matches/2990785/details");
-const data = await response.json();
-```
-
 ## 8. Useful Commands
 
 Restart API:

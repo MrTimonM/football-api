@@ -99,20 +99,22 @@ Invoke-RestMethod "http://127.0.0.1:8001/api/matches?q=mexico" | ConvertTo-Json 
 Get one match:
 
 ```powershell
-Invoke-RestMethod "http://127.0.0.1:8001/api/matches/2990785" | ConvertTo-Json -Depth 8
+Invoke-RestMethod "http://127.0.0.1:8001/api/matches/{id}" | ConvertTo-Json -Depth 8
 ```
 
-Get match details:
+Get match details for a current match ID:
 
 ```powershell
-Invoke-RestMethod "http://127.0.0.1:8001/api/matches/2990785/details" | ConvertTo-Json -Depth 12
+Invoke-RestMethod "http://127.0.0.1:8001/api/matches/{id}/details" | ConvertTo-Json -Depth 12
 ```
+
+Details are only available when the source has detail data for that match. Old or finished matches may return no detail payload.
 
 ## Example Match Response
 
 ```json
 {
-  "id": "2990785",
+  "id": "{id}",
   "sport": "football",
   "status": "live",
   "kickoff": "2026-06-10T17:00:00+00:00",
@@ -154,7 +156,7 @@ Invoke-RestMethod "http://127.0.0.1:8001/api/matches/2990785/details" | ConvertT
 ```json
 {
   "match": {
-    "id": "2990785",
+    "id": "{id}",
     "sport": "football",
     "status": "live"
   },

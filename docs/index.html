@@ -664,40 +664,11 @@ $r | Select-Object count | ConvertTo-Json -Depth 4</code></pre>
         </div>
 
         <h3>Get Match Details</h3>
+        <p class="muted">Use a current match ID from <code>/api/matches</code>. Old matches may not have detail data available.</p>
         <div class="code-window">
           <div class="code-title"><span>PowerShell</span><span>command</span></div>
-          <pre><code>Invoke-RestMethod "http://127.0.0.1:8001/api/matches/2906720/details" |
-  Select-Object hasEvents,hasStats,
-    @{Name="eventCount";Expression={$_.events.Count}},
-    @{Name="statCount";Expression={$_.stats.Count}},
-    match |
-  ConvertTo-Json -Depth 8</code></pre>
-        </div>
-        <div class="code-window">
-          <div class="code-title"><span>JSON</span><span>response</span></div>
-          <pre><code>{
-  "hasEvents": true,
-  "hasStats": true,
-  "eventCount": 4,
-  "statCount": 43,
-  "match": {
-    "id": "2906720",
-    "sport": "football",
-    "status": "live",
-    "home": {
-      "id": "645",
-      "name": "Belgium"
-    },
-    "away": {
-      "id": "735",
-      "name": "Egypt"
-    },
-    "score": {
-      "home": 0,
-      "away": 1
-    }
-  }
-}</code></pre>
+          <pre><code>Invoke-RestMethod "http://127.0.0.1:8001/api/matches/{id}/details" |
+  ConvertTo-Json -Depth 12</code></pre>
         </div>
 
         <h3>Error Response</h3>
