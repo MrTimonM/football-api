@@ -37,7 +37,8 @@ No external Python packages are required.
 ## Run Locally
 
 ```powershell
-cd e:\FootBallAPI\808fubo808
+git clone https://github.com/MrTimonM/football-api.git
+cd football-api
 python app.py
 ```
 
@@ -232,7 +233,20 @@ See [HOSTING.md](HOSTING.md) for a full VPS setup guide using Python, systemd, a
 
 A polished documentation page is available at [docs/index.html](docs/index.html).
 
-When you are ready to publish on GitHub Pages, set Pages to serve from the `/docs` folder.
+After GitHub Pages is enabled, the public documentation link will be:
+
+```text
+https://mrtimonm.github.io/football-api/
+```
+
+To enable it, open the repository settings and set:
+
+```text
+Settings -> Pages -> Build and deployment
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
+```
 
 ## Run Tests
 
