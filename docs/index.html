@@ -783,6 +783,7 @@ $r | Select-Object count | ConvertTo-Json -Depth 4</code></pre>
           <pre><code>apt update && apt upgrade -y
 apt install -y python3 nginx git
 
+git clone https://github.com/MrTimonM/football-api.git /var/www/football-api
 cd /var/www/football-api
 python3 -m py_compile app.py fubo808_parser.py
 python3 app.py</code></pre>

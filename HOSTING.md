@@ -26,30 +26,27 @@ Install Python and Nginx:
 apt install -y python3 python3-venv nginx git
 ```
 
-## 2. Upload Or Clone The Project
+## 2. Clone The Project From GitHub
 
-Create an app folder:
+Create the web folder:
 
 ```bash
 mkdir -p /var/www/football-api
 ```
 
-Upload your project files into:
+Clone the repository into that folder:
 
-```text
-/var/www/football-api
+```bash
+git clone https://github.com/MrTimonM/football-api.git /var/www/football-api
 ```
 
-Your folder should contain:
+Enter the project:
 
-```text
-app.py
-fubo808_parser.py
-README.md
-HOSTING.md
+```bash
+cd /var/www/football-api
 ```
 
-If you are using Git later, clone your repository into this same folder.
+If the folder already exists and is not empty, remove it first or clone into a different path.
 
 ## 3. Test The App Manually
 
@@ -227,10 +224,11 @@ nginx -t && systemctl reload nginx
 
 ## 9. Updating The API
 
-After uploading new files:
+After pushing new changes to GitHub:
 
 ```bash
 cd /var/www/football-api
+git pull
 python3 -m py_compile app.py fubo808_parser.py
 systemctl restart football-api
 ```
